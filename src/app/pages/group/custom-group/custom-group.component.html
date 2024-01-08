@@ -1,0 +1,8 @@
+<div class="wrapper" [routerLink]="'/' + userId + '/groups/' + id + '/group-detail'">
+    <p>{{ group.groupname }}</p>
+    <div class="edit-btn" [routerLink]="'/' + userId + '/groups/' + id + '/edit-group'">
+        <i class="fa-solid fa-pen-to-square"></i>
+        <p>Edit</p>
+    </div>
+</div>
+

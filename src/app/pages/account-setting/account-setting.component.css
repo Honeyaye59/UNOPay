@@ -1,0 +1,64 @@
+
+.icon {
+    color: var(--dark-blue-color);
+    margin-right: 10px;
+}
+.add-photo-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--dark-blue-color);
+    color: var(--light-blue-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+/* Style for the input element (hidden) */
+.file-input {
+    display: none;
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.img-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.img-container, .new-photo {
+    margin-bottom: 20px;
+}
+.info-container > div {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.logout-btn {
+    padding: 10px 60px;
+    background-color: var(--dark-blue-color);
+    color: var(--light-blue-color);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: underline;
+    cursor: pointer;
+}

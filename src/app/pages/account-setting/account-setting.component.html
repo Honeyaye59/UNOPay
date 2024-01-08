@@ -1,0 +1,42 @@
+<div class="wrapper">
+    <app-menu></app-menu>
+    <div class="container">
+        <div class="home-link" [routerLink]="'/' + userId + '/home'"><i class="fa-solid fa-arrow-left"></i></div>
+        <div class="center">
+            <div class="title">
+                <i class="fa-regular fa-user fa-3x icon"></i>
+                <h1>Account Setting</h1>
+
+            </div>
+            <div class="img-container">
+                <img src="https://cdn.i-scmp.com/sites/default/files/styles/768x768/public/d8/images/canvas/2023/06/07/3d6314a5-da52-420a-9c06-67372d1aec26_64405f2f.jpg?itok=F4AsQ890&v=1686121869"
+                    alt="">
+            </div>
+            <div class="newPhoto">
+                <label for="photo-upload" class="add-photo-button">
+                    Add New Profile Photo
+                </label>
+                <input type="file" id="photo-upload" class="file-input">
+            </div>
+            <div class="info-container">
+                <div class="display-name">
+                    <p>Honey</p>
+                    <div class="display-name-btn" [routerLink]="'/' + userId + '/account-setting/change-displayname'">
+                        <a>Change Display Name</a>
+                    </div>
+                </div>
+                <div class="username">
+                    <p>@honey59</p>
+                    <div class="username-btn" [routerLink]="'/' + userId + '/account-setting/change-username'">
+                        <a>Change Username</a>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <button class="logout-btn">Log Out</button>
+
+        </div>
+    </div>
+
+</div>

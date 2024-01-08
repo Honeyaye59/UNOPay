@@ -1,0 +1,9 @@
+.topbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-container {
+    display: flex;
+    align-items: center;
+}

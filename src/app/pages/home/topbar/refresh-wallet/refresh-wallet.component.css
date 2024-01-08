@@ -1,0 +1,18 @@
+/* .container {
+    display: flex;
+    align-items: center;
+} */
+button {
+    color: var(--orange-color);
+    background-color: var(--green-color);
+    padding: .5em 1em;
+    border-radius: 50px;
+    text-align: center;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--orange-color);
+    color: var(--green-color)
+}

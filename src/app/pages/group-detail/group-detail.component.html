@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="topbar">
+        <app-menu></app-menu>
+        <div class="create-group-btn" [routerLink]="'/' + user?.id + '/transfer-to'">
+            <a><i class="fa-solid fa-money-bill-transfer fa-2x"></i>&nbsp;&nbsp; <span> Transfer Money</span></a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="home-link" [routerLink]="'/' + user?.id + '/groups'"><i class="fa-solid fa-arrow-left"></i></div>
+        
+        <div class="center">
+            <h1>{{ groupById.groupname }}</h1>
+            <div class="top-section">
+                <div class="img-container">
+                    <img src="https://i.scdn.co/image/ab67616100005174d95cf4457fac4cc62311f84f" alt="">
+                    <p>{{ userById.displayname }}</p>
+                </div>
+                <div class="balance-container">
+                    <p class="balance">Balance</p>
+                    <p class="amount">{{ userById.balance }} MMK</p>
+                </div>
+            </div>
+            <hr class="styled-hr">
+            <h2>Other Members</h2>
+            <div class="members-container" *ngFor="let memberId of membersIdRemovedUserId">
+                <app-member [memberId]="memberId"></app-member>
+                
+            </div>
+            <hr class="styled-hr">
+            <h2>History</h2>
+            <div class="transfer-history-container">
+                <div *ngFor="let transferHistory of transferHistoriesOfTheGroup">
+            <app-transfer [transferHistory]="transferHistory"></app-transfer>
+        </div>
+            
+            </div>
+        </div>
+    </div>
+</div>
+

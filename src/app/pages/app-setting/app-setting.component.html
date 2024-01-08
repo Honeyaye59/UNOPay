@@ -1,0 +1,37 @@
+<div class="wrapper">
+    <app-menu></app-menu>
+    <div class="home-link" [routerLink]="'/'  + userId + '/home'"><i class="fa-solid fa-arrow-left"></i></div>
+    <div class="container">
+        
+        <div class="title">
+            <i class="fa-solid fa-gear icon fa-3x"></i>&nbsp;&nbsp;
+            <h1>App Setting</h1>
+            
+        </div>
+        <h2>Theme</h2>
+        <div class="list">
+            <label for="light">
+                <input type="radio" name="mode" id="light" value="light" (change)="toggleLightMode()" checked>
+                Light Mode
+            </label>
+            <label for="dark">
+                <input type="radio" name="mode" id="dark" value="dark" (change)="toggleDarkMode()">
+                Dark Mode
+            </label>
+        </div>
+        <h2>Language</h2>
+        <div class="list">
+            <label for="myanmar">
+                <input type="radio" name="language" id="myanmar" value="myanmar">
+                Myanmar
+            </label>
+            <label for="english">
+                <input type="radio" name="language" id="english" value="english">
+                English
+            </label>
+        </div>
+      
+        
+    </div>
+</div>
+

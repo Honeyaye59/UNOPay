@@ -1,0 +1,37 @@
+<div class="wrapper">
+    <app-menu></app-menu>
+    <div class="container">
+        <div class="home-link" [routerLink]="'/' + userId + '/groups'"><i class="fa-solid fa-arrow-left"></i></div>
+        <div class="center">
+            <h1>Create New Group</h1>
+    <form (ngSubmit)="onSubmit(createNewGroupForm)" #createNewGroupForm="ngForm">
+        <div>
+            <input type="text" placeholder="Enter Group Name" ngModel required minlength="1" maxlength="20" name="groupname" id="groupname">
+        </div>
+        <!-- Start Error Message -->
+        
+        <div class="error-message"
+          *ngIf="createNewGroupForm.controls['groupname'].invalid && (createNewGroupForm.controls['groupname'].dirty || createNewGroupForm.controls['groupname'].touched)" class="error-message">
+          <div *ngIf="createNewGroupForm.controls['groupname'].hasError('required')">Group Name is required</div>
+          <div *ngIf="createNewGroupForm.controls['groupname'].hasError('minlength')">Group Name must be at least 1 character</div>
+          <div *ngIf="createNewGroupForm.controls['groupname'].hasError('maxlength')">Group Name must be at most 20 characters</div>
+        </div>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        <!-- End Error Message -->
+        <div class="search-input-container">
+            <i class="fa-solid fa-magnifying-glass icon fa-2x"></i>
+            <input type="text" placeholder="Search Memeber to add by username" class="search-input" id="search-input" [(ngModel)]="usernameInput" name="usernameInput" (change)="filterUsers(usernameInput)">
+        </div>
+        
+        
+        <div class="users-container" *ngFor="let user of filteredUsers">
+             <app-user-container [filteredUser]="user" [groupMembersId]="groupMembersId"></app-user-container> 
+         </div>
+        <div class="create-btn-container">
+            <button class="cancel-btn" type="button" [routerLink]="'/' + userId + '/groups'">Cancel</button>
+            <button class="create-btn" type="submit">Create</button>
+        </div>
+    </form>
+        </div> 
+    </div>
+ </div> 

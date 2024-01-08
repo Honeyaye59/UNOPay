@@ -1,0 +1,33 @@
+<!-- <div class="wrapper">
+    <i class="fa-solid fa-money-bill-transfer fa-2x icon"></i>
+    <p>Transfer to {{ "Noe Noe"}}</p>
+    <p>- 2,00</p>
+</div> -->
+
+
+<!-- <div class="wrapper">
+    <i class="fa-solid fa-money-bill-transfer fa-2x icon"></i>
+    <p class="displayname">Transfer {{ isTransferTo ? 'To' : 'From'}} {{ isTransferTo ? receiverName : senderName}}</p>
+    <p class="amount">{{ isTransferTo ? ' - ' + amount : amount }}</p>
+    <p>{{ formattedDateToDisplay }}</p>
+
+</div> -->
+
+<ng-container *ngIf="!isDateSelected; else templateRef">
+    <div class="wrapper">
+        <i class="fa-solid fa-money-bill-transfer fa-2x icon"></i>
+        <p class="displayname">Transfer {{ isTransferTo ? 'To' : 'From'}} {{ isTransferTo ? receiverName : senderName}}</p>
+        <p class="amount">{{ isTransferTo ? ' - ' + amount : amount }}</p>
+        <p>{{ formattedDateToDisplay }}</p>
+    
+    </div>
+</ng-container>
+<ng-template #templateRef>
+    <div class="wrapper" *ngIf="selectedDate === formattedDate">
+        <i class="fa-solid fa-money-bill-transfer fa-2x icon"></i>
+        <p class="displayname">Transfer {{ isTransferTo ? 'To' : 'From'}} {{ isTransferTo ? receiverName : senderName}}</p>
+        <p class="amount">{{ isTransferTo ? ' - ' + amount : amount }}</p>
+        <p>{{ formattedDateToDisplay }}</p>
+    
+    </div>
+  </ng-template>

@@ -1,0 +1,30 @@
+ <div class="wrapper">
+    <app-menu></app-menu>
+    <div class="container">
+      <div class="home-link" [routerLink]="'/' + user.id + '/home'"><i class="fa-solid fa-arrow-left"></i></div>
+      
+        <div class="center">
+            <h1>Transfer To:</h1>
+            
+            <input type="text" placeholder="username123" [(ngModel)]="usernameInput" (input)="filterUsers()" (change)="validateInputs()">
+            <input type="text" placeholder="Amount, 500" [(ngModel)]="amountInput" pattern="/^\d+$/" required id="amountInput" (change)="validateInputs()">
+            <!-- Error Message -->
+            <div *ngIf="amountInput.invalid && (amountInput.dirty || amountInput.touched)">
+              <div *ngIf="amountInput.errors.required">This field is required.</div>
+              <div *ngIf="amountInput.errors.pattern">Please enter a valid number.</div>
+            </div>
+            <div *ngIf="usernameInput !== ''">
+              <div class="users-container" *ngFor="let user of filteredUsers">
+                <app-other-member [filteredUser]="user" (userClicked)="onUserClick($event)"></app-other-member> 
+            </div>
+              </div>
+            <button (click)="transferMoney()">Transfer</button>
+            <!-- <p *ngIf="isInputsValid && errorMessage">
+              {{ errorMessage }}
+            </p> -->
+          
+        </div>
+      
+    </div>
+</div>
+

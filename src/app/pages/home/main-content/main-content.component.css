@@ -1,0 +1,25 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.transfer, .group, .history {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--light-blue-color);
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--dark-blue-color);
+    transition: all 0.3s ease;
+}
+.transfer:hover, .group:hover, .history:hover {
+    transform: scale(1.2);
+}
+h1, h2 {
+    margin-bottom: 20px;
+}

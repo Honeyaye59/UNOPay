@@ -1,0 +1,46 @@
+
+
+<div class="menu-container">
+    <!-- Hamburger icon to open the menu -->
+    <div (click)="toggleMenu()" class="icon">
+      &#9776;
+    </div>
+    <!-- Menu items -->
+    <div class="menu-items" [ngClass]="{ 'open': menuOpen }">
+      <!-- Cross icon to close the menu -->
+      <div (click)="toggleMenu()" class="icon close">
+        &times;
+      </div>
+      <!-- Add your menu items here -->
+      <div class="img-container">
+        <img [src]=" userById?.profilePicture" alt="">
+      </div>
+      <div class="info mt-3">
+        <div class="d-flex align-items-center display-name">
+            <p class="black-text">Display Name</p>
+            <p class="orange-text">{{ userById?.displayname }}</p>
+        </div>
+        <div class="d-flex align-items-center email">
+            <p class="black-text">Email</p>
+            <p class="orange-text">{{ userById?.email }}</p>
+        </div>
+        <div class="d-flex align-items-center username">
+            <p class="black-text">Username</p>
+            <p class="orange-text">{{ userById?.username }}</p>
+        </div>
+        
+      </div>
+      <div class="setting">
+        <p>Settings</p>
+        <div class="app-setting" [routerLink]="'/' + userId + '/app-setting'" routerLinkActive="active">
+            <a>App Setting&nbsp;&nbsp;<i class="fa-solid fa-gear text-light"></i></a>
+        </div>
+        <div class="account-setting" [routerLink]="'/' + userId + '/account-setting'" routerLinkActive="active">
+            <a>Account Setting&nbsp;&nbsp;<i class="fa-regular fa-user text-light"></i></a>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+  
+  

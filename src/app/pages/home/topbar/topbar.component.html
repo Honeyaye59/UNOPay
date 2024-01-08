@@ -1,0 +1,7 @@
+<div class="topbar-container">
+    <app-menu></app-menu>
+    <div class="btn-container">
+        <app-refresh-wallet (walletButtonClick)="onWalletButtonClick()"></app-refresh-wallet>
+        <app-choose-currency (currencySelected)="onCurrencySelected($event)"></app-choose-currency>
+    </div>
+</div>

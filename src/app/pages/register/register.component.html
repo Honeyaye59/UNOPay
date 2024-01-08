@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="center">
+      <div class="wrapper">
+        <h1>UNO Pay</h1>
+        <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+          <div class="input-text">
+            <label for="username">Enter Username (username must be unique)</label>
+            <input type="text" id="username" name="username" placeholder="username123" minlength="3" maxlength="20" ngModel required >
+          </div>
+          <div
+            *ngIf="registerForm.controls['username'].invalid && (registerForm.controls['username'].dirty || registerForm.controls['username'].touched)" class="error-message">
+            <div *ngIf="registerForm.controls['username'].hasError('required')">Username is required</div>
+            <div *ngIf="registerForm.controls['username'].hasError('minlength')">Username must be at least 3 characters
+            </div>
+            <div *ngIf="registerForm.controls['username'].hasError('maxlength')">Username must be at most 20 characters
+            </div>
+            <!-- <div *ngIf="registerForm.controls['username'].hasError('pattern')">Username must contain only letters and
+              numbers</div> -->
+            <div *ngIf="registerForm.controls['username'].hasError('uniqueUsername')">Username is not unique</div>
+          </div>
+  
+  
+  
+          <div class="input-text">
+            <label for="displayname">Enter DisplayName</label>
+            <input type="text" id="displayname" name="displayname" placeholder="Name" minlength="1" maxlength="20" ngModel
+              required>
+          </div>
+          <!-- Error Message -->
+          <div
+            *ngIf="registerForm.controls['displayname'].invalid && (registerForm.controls['displayname'].dirty || registerForm.controls['displayname'].touched)" class="error-message">
+            <div *ngIf="registerForm.controls['displayname'].hasError('required')">Display Name is required</div>
+            <div *ngIf="registerForm.controls['displayname'].hasError('minlength')">Display Name must be at least 1 character</div>
+            <div *ngIf="registerForm.controls['displayname'].hasError('maxlength')">Display Name must be at most 20 characters</div>
+          </div>
+  
+  
+          <div class="input-text">
+            <label for="email">Enter Your Email</label>
+            <input type="email" id="email" name="email" placeholder="user@gmail.com" ngModel required pattern="pattern='^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'">
+          </div>
+          <!-- Error Message -->
+          <div
+            *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)" class="error-message">
+            <div *ngIf="registerForm.controls['email'].hasError('required')">Email is required</div>
+            <!-- <div *ngIf="registerForm.controls['email'].hasError('email')">Invalid email format</div> -->
+            <div *ngIf="registerForm.controls['email'].hasError('pattern')">Invalid email format</div>
+          </div>
+  
+          <div class="input-text">
+            <label for="password">Enter Your Password</label>
+            <input type="password" id="password" name="password" placeholder="******" minlength="8" maxlength="20" required ngModel>
+          </div>
+          <!-- Error Message -->
+          <div
+            *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)" class="error-message">
+            <div *ngIf="registerForm.controls['password'].hasError('required')">Password is required</div>
+            <div *ngIf="registerForm.controls['password'].hasError('minlength')">Password must be at least 8 characters</div>
+            <div *ngIf="registerForm.controls['password'].hasError('maxlength')">Password must be at most 20 characters</div>
+          </div>
+  
+          <button type="submit" [disabled]="!registerForm.valid" [class.inValid-button]="!registerForm.valid">Register</button>
+          <p>Already have an account? <a routerLink="/login">Login</a></p>
+        </form>
+  
+  
+        <!-- <div *ngIf="errorMessage !== ''">
+                  <p>Enter Valid Input</p>
+        </div> -->
+        
+      </div>
+    </div>
+  </div>
+  
+  <!-- [disabled]="!registerForm.form.valid" -->

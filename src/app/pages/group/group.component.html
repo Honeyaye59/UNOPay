@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <div class="topbar">
+        <app-menu></app-menu>
+        <div class="create-group-btn" [routerLink]="'/' + user?.id + '/create-group'">
+            <a><i class="fa-solid fa-plus text-dark"></i>&nbsp;&nbsp;Create New Group</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="home-link" [routerLink]="'/'  + user?.id + '/home'"><i class="fa-solid fa-arrow-left"></i></div>
+        <div class="center">
+            <h1>My Groups</h1>
+        <div class="custom-groups-container">
+            <app-custom-group *ngFor="let group of userGroups" [group]="group" [user]="user"></app-custom-group>
+        </div>
+        </div>
+            
+        
+
+    </div>
+</div>
+

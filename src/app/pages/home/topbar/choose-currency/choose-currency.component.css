@@ -1,0 +1,17 @@
+select {
+    color: var(--orange-color);
+    background-color: var(--green-color);
+    padding: .5em 1em;
+    border-radius: 50px;
+    text-align: center;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+select:hover {
+    background-color: var(--orange-color);
+    color: var(--green-color)
+}
+.container {
+    margin: 0 10px;
+}

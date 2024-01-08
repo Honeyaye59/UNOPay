@@ -1,0 +1,8 @@
+<div class="wrapper">
+    <div class="img-container">
+        <img [src]="filteredUser.profilePicture" alt="Profile Picture">
+    </div>
+    <p>{{ filteredUser.username }}</p>
+    <button (click)="onAddClick()" [ngClass]="{ 'added-style': isAdded }" type="button">{{ buttonText }}</button>
+</div>
+

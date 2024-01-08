@@ -1,0 +1,7 @@
+<div class="wrapper">
+    <div class="img-container">
+        <img [src]="member?.profilePicture" alt="Profile Picture">
+    </div>
+    <p>{{ member?.username }}</p>
+    <button (click)="onRemoveClick()" type="button">Remove</button>
+</div>

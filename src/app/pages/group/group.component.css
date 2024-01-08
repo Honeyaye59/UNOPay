@@ -1,0 +1,48 @@
+.wrapper {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+}
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.create-group-btn {
+    /* width: 150px;
+    height: 100px; */
+    background-color: var(--green-color);
+   
+    border-radius: 10px;
+    padding: 10px 15px;
+    position: relative;
+    right: 5%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.create-group-btn:hover {
+    background-color: var(--orange-color);
+    
+}
+
+.create-group-btn:hover a {
+    color: var(--green-color)
+}
+.create-group-btn a {
+    color: var(--orange-color);
+    text-decoration: none;
+}
+h1 {
+    margin-bottom: 20px;
+}
+
+.custom-groups-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    /* width: 400px; */
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

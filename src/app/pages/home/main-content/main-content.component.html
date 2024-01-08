@@ -1,0 +1,28 @@
+
+<div class="container">
+    <h1>My Wallet</h1>
+    <h2>Balance: {{ formatBalance }} {{ selectedCurrency }}</h2>
+    
+        <div class="transfer" [routerLink]="'/' + user?.id + '/transfer-to'">
+            <i class="fa-solid fa-money-bill-transfer fa-2x"></i>
+            <span>Transfer</span>
+        </div>
+    
+    
+    
+        <div class="group" [routerLink]="'/' + user?.id + '/groups'">
+            <i class="fa-solid fa-user-group fa-2x"></i>
+            <span>Groups</span>
+        </div>
+   
+    
+    
+        <div class="history" [routerLink]="'/' + user?.id + '/transfer-history'">
+            <i class="fa-solid fa-clipboard-list fa-2x"></i>
+            <span>Transfer History</span>
+        </div>
+    
+    
+</div>
+
+

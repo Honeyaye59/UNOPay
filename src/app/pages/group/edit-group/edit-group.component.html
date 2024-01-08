@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <app-menu></app-menu>
+    <div class="home-link" [routerLink]="'/' + user?.id + '/groups'"><i class="fa-solid fa-arrow-left"></i></div>
+    <div class="center">
+        <h1>{{ groupById.groupname }}</h1>
+        
+        <input type="text" class="groupnameInput" placeholder="Enter New Group Name" required minlength="1" maxlength="20" [(ngModel)]="groupnameInput" id="groupnameInput">
+       
+        <button (click)="onClick()">Change Group Name</button>
+    
+        <hr>
+        <h2>Members</h2>
+        <div class="member-container" *ngFor="let groupMemberId of groupMembersId
+        ">
+            <app-member-container [groupMemberId]="groupMemberId"></app-member-container>
+        </div>
+        
+        <button class="delete-btn">Delete Group</button>
+
+    </div>
+</div>

@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --orange-color: #F06209;
+    --green-color: #C1FF72;
+    --dark-blue-color: #004AAD;
+    --light-blue-color: #D5E6E0;
+    --bg-color: #f4f4f4;
+    --light-orange-color: #FFE1B4;
+
+    /* Dark mode colors */
+
+}
+
+body.dark-mode {
+    --bg-color: #1e1e1e;
+    --orange-color: #F06209;
+    --green-color: #8FCC6B;
+    --light-blue-color: #5C8FB3;
+    --light-orange-color: #FFC58D;
+    color: #fff;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html, body {
+    background-color: var(--bg-color);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+.inValid-button {
+    background-color: gray;
+  color: lightgray;
+  cursor: not-allowed;
+}
+.home-link {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--orange-color);
+    color: var(--green-color);
+    display: inline-block;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  .home-link:hover {
+    background-color: var(--green-color);
+    color: var(--orange-color);
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }

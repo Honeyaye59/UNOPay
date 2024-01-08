@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="center">
+        <div class="wrapper">
+            <div class="profile-img">
+                <img src="" alt="">
+            </div>
+            <h1 class="logo logo-text">UNO Pay</h1>
+            <p class="logo-text">Your Virtual Wallet</p>
+            <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+            <p class="input-text">Enter Your Email</p>
+            <input type="email" id="email" name="email" placeholder="user@gmail.com" ngModel required pattern='^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' autocomplete="new-password">
+            <!-- Start Error Message -->
+        <div
+        *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="error-message">
+        <div *ngIf="loginForm.controls['email'].hasError('required')">Email is required</div>
+        <!-- <div *ngIf="loginForm.controls['email'].hasError('email')">Invalid email format</div> -->
+        <div *ngIf="loginForm.controls['email'].hasError('pattern')">Invalid email format</div>
+      </div>
+      <!-- End Error Message -->
+            <p class="input-text">Enter Your Password</p>
+            <input type="password" id="password" name="password" placeholder="******" required ngModel>
+            <!-- Start Error Message -->
+            <div
+            *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="error-message">
+            <div *ngIf="loginForm.controls['password'].hasError('required')">Password is required</div>
+            <!-- <div *ngIf="loginForm.controls['password'].hasError('minlength')">Password must be at least 8 characters</div> -->
+            <!-- <div *ngIf="loginForm.controls['password'].hasError('maxlength')">Password must be at most 20 characters</div> -->
+          </div>
+          <!-- End Error Message -->
+            <button type="submit" [disabled]="!loginForm.valid" [class.inValid-button]="!loginForm.valid">Login</button>
+            <p>New User? <a routerLink="/register">Register</a></p>
+            <p class="error-message" *ngIf="errorMessage !== ''">{{ errorMessage }}</p>
+        </form>
+        </div>
+        
+    </div>
+    
+</div>
+
